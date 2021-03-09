@@ -15,7 +15,8 @@ export const FrontTitle = styled.div`
 export const FrontProject = styled.div`
     width: ${props => props.back ? `min(45rem, 90%)` : `min(70rem, 92%)`}; 
     float: ${props => props.back ? `left` : `right`}; 
-    height: 22vh;
+    min-height: 20rem;
+    overflow: hidden;
     position: relative;
     background: var(--white);
     @media (min-width: 750px) {

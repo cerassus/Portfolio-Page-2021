@@ -23,19 +23,18 @@ export const BackgroundImage = styled.div`
 
 export const TabsContent = styled.div`
     display: flex;
-    padding: 4vw 3vw;
+    padding: 12vh 10vh;
     font-family: "Raleway";
     font-weight: 300;
     grid-area: content;
     font-size: 1.4rem;
     color: var(--teal);
     letter-spacing: 0.06em;
-    min-height: 20rem;
 `
 
 export const Tab = styled.div`
     text-align: center;
-    padding: 3vw 0;
+    padding: 3vh 0;
     background-color: ${props => props.active ? `transparent` : `black`};
     color: ${props => props.active ? `black` : `rgba(255,255,255,0.9)`};
     text-transform: uppercase;

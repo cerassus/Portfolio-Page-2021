@@ -91,7 +91,7 @@ const NavLinkStyled = styled.li`
         };
     }
     @media (max-width: 750px) {
-        padding: 4vw;
+        padding: 3vh;
         margin: 0;
         font-size: 3rem;
         width: 100%;

@@ -4,6 +4,7 @@ import { useStore } from "../redux/redux"
 
 const StyledContainer = styled.div`
   display: flex;
+  ${props => !props.contactPage && `justify-content: flex-end`};
   @media (max-width: 750px) {
       flex-direction: column;
       & > * {
@@ -32,11 +33,12 @@ const MainContainer = ({ children, ...rest }) => {
     }, 1000)
   }, [])
   return (
-    <StyledContainer {...rest} >
+    <StyledContainer id="page_container" {...rest} >
       {React.cloneElement(children[0], { 
         width: store.dimensions[0],
         unmount: store.user_is_changing_page,
         transitions: store.allow_transitions,
+        fullHeight: store.fullHeight,
       })}
       {React.cloneElement(children[1], { 
         width: store.dimensions[1],
@@ -52,6 +54,7 @@ const MainContainer = ({ children, ...rest }) => {
 
 export const Container = styled.div`
     position: relative;
+    height: ${props => props.fullHeight ? `calc(100vh - 116px)` : `auto`};
     ${props => props.next_page
         ? props.next_page === "Contact" 
             ? `
@@ -72,13 +75,13 @@ export const Container = styled.div`
     ${props => props.experience && `
           display: inline-flex;
           flex-direction: column;
-          justify-content: space-around;
           align-items: center;
+          justify-content: ${props.fullHeight ? `space-around` : `center`};
       `};
     @media (min-width: 751px) {
       display: ${props => props.experience ? `inline-flex` : `inline-block`};
       width: ${props => props.width ? `${props.width}px` : `100%`};
-      height: calc(100vh - 116px);
+      /* height: calc(100vh - 116px); */
       & > * {
         ${props => props.unmount && `animation: fadeout .5s ease;`};
       }
@@ -92,7 +95,6 @@ export const Container = styled.div`
       }
       ${props => props.experience && `
           width: 100%;
-          height: 50vh;
           justify-content: flex-end;
       `};
     }

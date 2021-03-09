@@ -7,7 +7,8 @@ const initial_state = {
   next_page: false,
   allow_transitions: false,
   dimensions: [0, 0],
-  user_is_changing_page: false
+  user_is_changing_page: false,
+  fullHeight: false,
 }
 
 const actions = {
@@ -28,6 +29,9 @@ const actions = {
   },
   setNextPage: (value) => ({ setState })=> {
     setState({ next_page: value })
+  },
+  setAuthorImageBig: (boolean) => ({ setState })=> {
+    setState({ fullHeight: boolean })
   },
 }
 

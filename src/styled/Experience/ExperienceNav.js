@@ -4,6 +4,7 @@ import styled from "styled-components"
 export const Image = styled.img`
     width: ${props => props.width ? `${props.width / 2.7}px` : `60%` };
     height: auto;
+    margin: 2rem 0;
     @media (max-width: 750px) {
         position: absolute;
         top: 50%;
@@ -29,7 +30,7 @@ export const Nav = styled.div`
 export const Tab = styled.div`
     background-color: var(--white);
     color: var(--teal);
-    padding: 3rem;
+    padding: 4vh;
     width: 100%;
     text-align: center;
     text-transform: uppercase;

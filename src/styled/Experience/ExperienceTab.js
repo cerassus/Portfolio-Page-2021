@@ -4,7 +4,7 @@ import React from "react"
 
 export const Container = styled.div`
   ${props => props.width && `width: ${props.width}px`};
-  height: calc(100vh - 116px);
+  /* height: calc(100vh - 116px); */
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -108,7 +108,7 @@ export const TechnologyTableText = styled.div`
 `
 
 export const CV = styled.img`
-  width: 65%;
+  width: 50%;
   height: auto;
   left: 50%;
   transform: translate(-50%, 0);
@@ -119,3 +119,4 @@ export const CV = styled.img`
     box-shadow: 5px 5px 15px var(--teal);
   }
 `
+

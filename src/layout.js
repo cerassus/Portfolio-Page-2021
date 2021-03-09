@@ -15,6 +15,7 @@ function Layout({ children, title, root }) {
   const [black_background_width, white_background_width] = useGetBackgroundSizes(didMount)
   useEffect(() => {
     setDidMount(true)
+    actions.setTransitions(false)
   }, [])  
   useEffect(() => {
     black_background_width && 
@@ -22,18 +23,17 @@ function Layout({ children, title, root }) {
     actions.setDimensions([black_background_width, white_background_width])
   }, [black_background_width])
   useEffect(() => {
-    const body = document.getElementsByTagName("body")
-    const wrapper = document.getElementById("gatsby-focus-wrapper")
-    const white_bg = document.getElementById("white_bg")
-    if(title === "Projects" && white_background_width < 370 && didMount) {
-      body[0].style.overflow = "scroll";
-      wrapper.style.height = "auto";
-      wrapper.style.position = "relative";
-      white_bg.style.height = "100%";
-    } else {
-      body[0].style.overflow = "hidden";
-    }
-  }, [white_background_width])
+    actions.setAuthorImageBig(false)
+    if(didMount) {
+        const about_me_container = document.querySelector("#page_container > *:nth-child(2)")
+        about_me_container && (
+            about_me_container.offsetHeight < window.innerHeight 
+            ? actions.setAuthorImageBig(true)
+            : actions.setAuthorImageBig(false)
+        )
+    } 
+    console.log(didMount)
+}, [didMount])
   return (
     <Fragment>
       <Head title={title}/>

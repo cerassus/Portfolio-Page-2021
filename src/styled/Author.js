@@ -2,11 +2,12 @@ import styled from "styled-components"
 
 export const AuthorContent = styled.div`
     position: absolute;
-    bottom: 50%;
+    bottom: 30%;
     transition: width ease .4s;
     left: 50%;
     transform: translate(-50%, 0%);
     display: inline-block;    
+    z-index: 1000;
     ${props => (!props.isRoot && !props.menu)
         ? `
             top: 0;
@@ -22,6 +23,9 @@ export const AuthorContent = styled.div`
            };        
         `
     };
+    @media (max-height: 500px) {
+        display: none;
+    }
 `
 
 export const Name = styled.h1`

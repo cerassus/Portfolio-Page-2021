@@ -1,5 +1,3 @@
-import { createGlobalStyle } from "styled-components"
-
 export const links = ["About", "Experience", "Projects", "Hobbies", "Contact"]
 export const about = [
   {
@@ -17,20 +15,20 @@ export const about = [
 ]
 export const experience_tabs = ["Courses", "Technologies", "Resume"]
 export const courses = {
-  freeCodeCamp: [
-    {
-      course: "Responsive Web Design",
-      url: "https://www.freecodecamp.org/certification/cerassus/responsive-web-design",
-    },
-    {
-      course: "JavaScript Algorithms and Data Structures",
-      url: "https://www.freecodecamp.org/certification/cerassus/javascript-algorithms-and-data-structures",
-    },
-    {
-      course: "Front-End Libraries",
-      url: "https://www.freecodecamp.org/certification/cerassus/front-end-libraries",
-    },
-  ],
+  // freeCodeCamp: [
+  //   {
+  //     course: "Responsive Web Design",
+  //     url: "https://www.freecodecamp.org/certification/cerassus/responsive-web-design",
+  //   },
+  //   {
+  //     course: "JavaScript Algorithms and Data Structures",
+  //     url: "https://www.freecodecamp.org/certification/cerassus/javascript-algorithms-and-data-structures",
+  //   },
+  //   {
+  //     course: "Front-End Libraries",
+  //     url: "https://www.freecodecamp.org/certification/cerassus/front-end-libraries",
+  //   },
+  // ],
   "CODE:ME": [
     {
       course: "JavaScript from scratch and React",

@@ -8,7 +8,7 @@ export default function Contact() {
   const [store, actions] = useStore()
   return (
    <Layout title="Contact">
-    <PageContainer>
+    <PageContainer contactPage>
       <ContactForm loaded="true" contact="true" next_page={store.next_page} />
       <div />
     </PageContainer>
