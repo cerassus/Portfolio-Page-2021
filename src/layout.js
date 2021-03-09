@@ -22,18 +22,6 @@ function Layout({ children, title, root }) {
     white_background_width &&
     actions.setDimensions([black_background_width, white_background_width])
   }, [black_background_width])
-  useEffect(() => {
-    actions.setAuthorImageBig(false)
-    if(didMount) {
-        const about_me_container = document.querySelector("#page_container > *:nth-child(2)")
-        about_me_container && (
-            about_me_container.offsetHeight < window.innerHeight 
-            ? actions.setAuthorImageBig(true)
-            : actions.setAuthorImageBig(false)
-        )
-    } 
-    console.log(didMount)
-}, [didMount])
   return (
     <Fragment>
       <Head title={title}/>

@@ -9,13 +9,14 @@ export const FrontTitle = styled.div`
     text-align: ${props => props.back ? `left` : `right`};
     @media (max-width: 1100px) {
         color: var(--white);
+        text-align: left;
     }
 `
 
 export const FrontProject = styled.div`
     width: ${props => props.back ? `min(45rem, 90%)` : `min(70rem, 92%)`}; 
     float: ${props => props.back ? `left` : `right`}; 
-    min-height: 20rem;
+    min-height: 21.5rem;
     overflow: hidden;
     position: relative;
     background: var(--white);

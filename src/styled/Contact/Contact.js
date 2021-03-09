@@ -20,7 +20,7 @@ export const FormContainer = styled.div`
 
 export const FormContainerHeader = styled.div`
     background-color: var(--black);
-    padding: 3vh;
+    padding: 2vw;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -32,7 +32,7 @@ export const SocialIcon = styled.img`
 
 export const FormContainerContent = styled.form`
     background-color: var(--white);
-    padding: 4rem 6rem;
+    padding: 4vw 6vw;
     display: flex;
     flex-direction: column;
     justify-content: center;

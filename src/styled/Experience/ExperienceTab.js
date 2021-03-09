@@ -4,7 +4,6 @@ import React from "react"
 
 export const Container = styled.div`
   ${props => props.width && `width: ${props.width}px`};
-  /* height: calc(100vh - 116px); */
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -47,6 +46,7 @@ export const TechnologyTable = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
   grid-row-gap: clamp(1vh, 1.7vh, 2.5vh);
+  grid-column-gap: 2rem;
   color: var(--teal);
   font-size: clamp(1rem, 3vw, 1.4rem);
   @media (max-width: 1100px) {
@@ -60,8 +60,10 @@ export const TechnologyTable = styled.div`
 export const TechnologyTableRow = styled.div`
   display: flex;
   align-items: center;
+  border-bottom: 2px solid #c5e1e4;
   @media (min-width: 750px) and (max-width: 1100px) {
    flex-direction: column; 
+   border-bottom: none;
    & > *:first-child {
      margin: 0 1rem 2rem 1rem;
    }
@@ -105,6 +107,18 @@ export const TechnologyTableIcon = styled.div`
 
 export const TechnologyTableText = styled.div`
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+
+`
+
+export const TechnologyHeader = styled.div`
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 5vw;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 `
 
 export const CV = styled.img`

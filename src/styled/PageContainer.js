@@ -53,8 +53,9 @@ const MainContainer = ({ children, ...rest }) => {
 // Container === Left or Right Sub-Page Container
 
 export const Container = styled.div`
+    /* height: ${props => (props.about || props.contact) ? `calc(100vh - 116px)` : `auto`}; */
+
     position: relative;
-    height: ${props => props.fullHeight ? `calc(100vh - 116px)` : `auto`};
     ${props => props.next_page
         ? props.next_page === "Contact" 
             ? `
@@ -76,12 +77,13 @@ export const Container = styled.div`
           display: inline-flex;
           flex-direction: column;
           align-items: center;
-          justify-content: ${props.fullHeight ? `space-around` : `center`};
+          justify-content: space-around;
+          height: 80rem;
       `};
     @media (min-width: 751px) {
       display: ${props => props.experience ? `inline-flex` : `inline-block`};
       width: ${props => props.width ? `${props.width}px` : `100%`};
-      /* height: calc(100vh - 116px); */
+      ${props => props.contact && `padding: 8vh`}; 
       & > * {
         ${props => props.unmount && `animation: fadeout .5s ease;`};
       }
@@ -93,6 +95,7 @@ export const Container = styled.div`
       & > * {
         ${props => props.unmount && `opacity: 0;`};
       }
+      ${props => props.contact && `padding: 3vh`}; 
       ${props => props.experience && `
           width: 100%;
           justify-content: flex-end;
