@@ -12,6 +12,7 @@ const Img = styled.div`
   box-shadow: -20px -25px 25px black;
   @media (max-width: 750px) {
     height: calc(100vw * 3/2);  
+    background-position: center;
   }
 `
 

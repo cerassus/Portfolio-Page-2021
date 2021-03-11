@@ -73,7 +73,7 @@ export const Container = styled.div`
       ${props => props.loaded ? `animation: fadein 1s ease;` : `opacity: 0`}; 
       ${props => props.transitions && `transition: all .3s ease`};
     }
-    ${props => props.experience && `
+    ${props => (props.experience || props.experience2) && `
           display: inline-flex;
           flex-direction: column;
           align-items: center;
@@ -96,9 +96,15 @@ export const Container = styled.div`
         ${props => props.unmount && `opacity: 0;`};
       }
       ${props => props.contact && `padding: 3vh`}; 
-      ${props => props.experience && `
+      ${props => props.experience2 && `
           width: 100%;
           justify-content: flex-end;
+          height: 45rem;
+
+      `};
+      ${props => props.experience && `
+          justify-content: flex-start;
+          height: auto;
       `};
     }
 `

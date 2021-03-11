@@ -7,7 +7,7 @@ import TabResume from "./Tabs/TabResume"
 
 export default function ExperienceTab(props) {
   return (
-  <Container experience { ...props }>
+  <Container experience="true" { ...props }>
       {props.which_tab === 0 && <TabCourses { ...props }/>}
       {props.which_tab === 1 && <TabTech { ...props }/>}
       {props.which_tab === 2 && <TabResume { ...props }/>}

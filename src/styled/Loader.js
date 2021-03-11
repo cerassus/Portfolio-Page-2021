@@ -15,6 +15,10 @@ const Spinner = styled.div`
         animation: ${props => props.black ? `load2` : `load1`} 1s infinite ease-in-out;
         width: 1em;
         height: 4em;
+        @media (max-width: 500px) {
+            background-color: #fff;
+            animation: load1 1s infinite ease-in-out;
+        }
     }
     &::before, &::after {
         position: absolute;

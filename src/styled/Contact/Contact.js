@@ -99,7 +99,7 @@ export const HelperText = styled.div`
     font-weight: 500;
     align-self: flex-start;
     transition: opacity .3s ease;
-    opacity: ${props => props.helper ? `1` : `0`};
+    min-height: 1.8rem;
     & span {
         color: transparent;
     }

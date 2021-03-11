@@ -6,7 +6,7 @@ import { Container } from "../../styled/PageContainer"
 
 export default function ExperienceNav(props) {
   return (
-    <Container experience="true" {...props}>
+    <Container experience2="true" {...props}>
       <Nav>
         {experience_tabs.map((tab, i) => (
           <Tab

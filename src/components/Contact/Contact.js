@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import {
   FormContainer,
   FormContainerHeader,
@@ -18,15 +18,18 @@ import { Container } from "../../styled/PageContainer"
 import emailjs from 'emailjs-com';
 
 export default function Contact({ ...props }) {
-  const [helper, setHelper] = useState("")
+  const helper = useRef()
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
   const [response, setResponse] = useState(false)
   const [loading, setLoading] = useState(false)
+  const setHelper = (text) => {
+    helper.current.innerHTML = text
+  }
   const sendEmail = e => {
     e.preventDefault()
-    if(!email || !message || helper) {
-        setResponse(helper);
+    if(!email || !message || helper.current.innerText) {
+        setResponse(helper.current.innerText);
     } else {
         setLoading(true)
         emailjs
@@ -78,13 +81,17 @@ export default function Contact({ ...props }) {
         <FormContainerContent response={response} loading={loading} onSubmit={sendEmail}>
           <FormControl>
             <Label htmlFor="email">E-mail</Label>
-            <Input name="email" type="email" id="email" required onKeyUp={(e) => setEmail(e.target.value)} />
+            <Input name="email" type="email" id="email" required 
+            onKeyUp={(e) => setEmail(e.target.value)} 
+            />
           </FormControl>
           <FormControl>
             <Label htmlFor="message">Message</Label>
-            <TextArea name="message" id="message" required onKeyUp={(e) => setMessage(e.target.value)}/>
+            <TextArea name="message" id="message" required 
+            onKeyUp={(e) => setMessage(e.target.value)}
+            />
           </FormControl>
-          <HelperText helper={helper}><span>.</span>{helper}</HelperText>
+          <HelperText ref={helper}></HelperText>
           <SendButton type="submit" value="Send" />
         </FormContainerContent>
         <Loader black loaded={!loading} />
